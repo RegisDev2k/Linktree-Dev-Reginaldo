@@ -1,0 +1,192 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #140f07, #162242);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    transition: background 0.5s ease, color 0.5s ease;
+    scroll-behavior: smooth;
+    flex-direction: column;
+}
+
+body.light-mode {
+    background: linear-gradient(45deg, #6d74e1, #b0a9fa);
+    color: #140f07;
+}
+
+body.dark-mode {
+    background: linear-gradient(45deg, #140f07, #162242);
+    color: #b0a9fa;
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px 70px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: background 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+    margin-bottom: 80px; /* Adjust for footer space */
+}
+
+body.light-mode .container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .container {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode .profile-pic:hover {
+    transform: scale(1.1);
+    border-color: #6d74e1;
+}
+
+body.dark-mode .profile-pic:hover {
+    transform: scale(1.1);
+    border-color: #b0a9fa;
+}
+
+.name {
+    margin: 20px 0;
+    font-size: 32px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.bio {
+    font-size: 20px;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.links .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .links .link {
+    background: rgba(0, 0, 0, 0.1);
+    color: #140f07;
+}
+
+body.dark-mode .links .link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #b0a9fa;
+}
+
+.links .link i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.links .link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    transition: height 0.3s ease;
+}
+
+.links .link:hover::before {
+    height: 100%;
+}
+
+.links .link:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(20deg);
+}
+
+body.light-mode .dark-mode-toggle {
+    color: #140f07;
+}
+
+body.dark-mode .dark-mode-toggle {
+    color: #b0a9fa;
+}
+
+.dark-mode .name,
+.dark-mode .bio {
+    color: #3b4b8b;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: 80%;
+    }
+}
+
+/* Color Palettes */
+.light-mode .color1 { color: #140f07; }
+.light-mode .color2 { color: #162242; }
+.light-mode .color3 { color: #3b4b8b; }
+.light-mode .color4 { color: #6d74e1; }
+.light-mode .color5 { color: #b0a9fa; }
+
+.dark-mode .color1 { color: #140f07; }
+.dark-mode .color2 { color: #162242; }
+.dark-mode .color3 { color: #3b4b8b; }
+.dark-mode .color4 { color: #6d74e1; }
+.dark-mode .color5 { color: #b0a9fa; }

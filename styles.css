@@ -33,11 +33,11 @@ body.dark-mode {
 .container {
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
-    padding: 30px 70px;
+    padding: 20px 70px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transition: background 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
-    margin-bottom: 80px; /* Adjust for footer space */
+    margin: 30px 20px ;
 }
 
 body.light-mode .container {
@@ -86,7 +86,7 @@ body.dark-mode .profile-pic:hover {
     align-items: center;
     justify-content: center;
     padding: 20px 30px;
-    margin: 20px 0;
+    margin: 15px 0;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     text-decoration: none;

@@ -347,7 +347,7 @@ body {
     border: 1px solid var(--contact-item-border-color);
     border-radius: 5px;
     background: var(--contact-item-background-card-color);
-    width: 80%;
+    width: 100%;
     max-width: 500px;
     margin-bottom: 10px;
     align-items: center;
@@ -435,8 +435,16 @@ body {
     }
 
     .tab {
-        font-size: 14px;
+        font-size: 12px;
     }
+
+    .tab-content {
+        margin-bottom: 5px;
+    }
+
+.tab-content.active {
+    font-size: 12px;
+}
 
     .profile-content {
         padding: 5px;
@@ -444,6 +452,12 @@ body {
 
     .profile-footer {
         font-size: 8px;
+    }
+
+    .skill i {
+        margin: 0;
+        font-size: 25px;
+
     }
 
     .skill span {
@@ -455,7 +469,23 @@ body {
         grid-template-columns: repeat(3, 1fr);
         margin: 5px;
     }
-    
+
+    .contact-details h3 {
+        font-size: 12px;
+    }
+    .contact-details p {
+    font-size: 9px;
+    }
+
+    .contact-item {
+        margin-bottom: 3px;
+        gap: 0;
+        width: 100%;
+    }
+
+    #contato.tab-content.active h2 p {
+        font-size: 5px;
+    }
 }
 
 @media (max-width: 300px) {
@@ -509,6 +539,7 @@ body {
     .contact-item {
         margin-bottom: 3px;
         gap: 0;
+        width: 100%;
     }
 
     #contato.tab-content.active h2 p {

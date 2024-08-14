@@ -162,7 +162,7 @@ body {
 .tab-content {
     display: none;
     padding: 0 18px;
-    animation: fadeIn 1s ease;
+    animation: fadeIn 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
     text-align: center;
 }
 
@@ -467,12 +467,26 @@ body {
         font-size: 12px;
     }
 
+    .tab-content {
+        margin-bottom: 5px;
+    }
+
+.tab-content.active {
+    font-size: 12px;
+}
+
     .profile-content {
         padding: 5px;
     }
 
     .profile-footer {
         font-size: 8px;
+    }
+
+    .skill i {
+        margin: 0;
+        font-size: 25px;
+
     }
 
     .skill span {
@@ -483,6 +497,22 @@ body {
         gap: 5px;
         grid-template-columns: repeat(3, 1fr);
         margin: 5px;
+    }
+
+    .contact-details h3 {
+        font-size: 12px;
+    }
+    .contact-details p {
+    font-size: 9px;
+    }
+
+    .contact-item {
+        margin-bottom: 3px;
+        gap: 0;
+    }
+
+    #contato.tab-content.active h2 p {
+        font-size: 5px;
     }
 }
 

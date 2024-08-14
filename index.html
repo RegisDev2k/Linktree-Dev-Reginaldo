@@ -1,40 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree</title>
+    <title>Cartão de Perfil</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="container">
-        <div class="profile">
-            <img src="./img/profile.png" alt="Profile Picture" class="profile-pic">
-            <h1 class="name">Reginaldo Nunes</h1>
-            <p class="bio">Desenvolvedor Front End.</p>
-            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
+
+<body class="light-mode">
+    <div class="profile-card">
+        <div class="profile-header">
+            <button id="theme-toggle-button" class="toggle-button" title="Alternar Tema">
+                <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
             </button>
+            <img src="./img/profile.png" alt="Foto de Perfil" class="profile-img">
+            <h1 class="color2">Reginaldo Nunes</h1>
+            <p class="color3">Desenvolvedor Front-End</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/reginaldonunes" target="_blank" class="color4"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/reginaldonunes" target="_blank" class="color4"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/reginaldonunes" target="_blank" class="color4"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <div class="links">
-            <a href="https://github.com/RegisDev2k" class="link">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.instagram.com/regiis_n/" class="link">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://regisdev2k.github.io/Manuten-o/" class="link">
-                <i class="fas fa-briefcase"></i> Portfolio
-            </a>
-            <a href="https://www.linkedin.com/in/reginaldo-nunes-03113b285/" class="link">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
+        <div class="profile-content">
+            <div class="tabs">
+                <div class="tab color5" data-tab="Portfólio">Portfólio</div>
+                <div class="tab color5" data-tab="habilidades">Habilidades</div>
+                <div class="tab color5" data-tab="contato">Contato</div>
+            </div>
+            <div class="tab-content" id="Portfólio">
+                <p>Acessar Meu Portfólio</p>
+                <a href="https://regisdev2k.github.io/Manuten-o/" target="_blank" class="color4"><i
+                        class="fa-solid fa-briefcase"></i></a>
+            </div>
+            <div class="tab-content" id="habilidades">
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-vuejs"></i>
+                        <span>Vue.js</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-content" id="contato">
+                <h2>Entre em Contato</h2>
+                <p>Você pode me encontrar através dos seguintes canais:</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:reginaldonunes@email.com">reginaldonunes@email.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h3>Telefone</h3>
+                            <p>(99) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>Endereço</h3>
+                            <p>Rua XYZ, 123 - Cidade, Estado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-footer">
+            <p class="color4">&copy; 2024 Reginaldo Nunes. Todos os direitos reservados.</p>
         </div>
     </div>
-    <footer class="footer">
-        <p>&copy; 2024 Reginaldo Nunes. todos os direitos reservados.</p>
-    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

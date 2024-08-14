@@ -1,192 +1,525 @@
-/* styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
 body {
-    background: linear-gradient(45deg, #140f07, #162242);
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    color: #fff;
-    transition: background 0.5s ease, color 0.5s ease;
-    scroll-behavior: smooth;
-    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to right, var(--bg-color-start), var(--bg-color-end));
+    margin: 0;
+    transition: background 0.3s ease;
 }
 
-body.light-mode {
-    background: linear-gradient(45deg, #6d74e1, #b0a9fa);
-    color: #140f07;
-}
-
-body.dark-mode {
-    background: linear-gradient(45deg, #140f07, #162242);
-    color: #b0a9fa;
-}
-
-.container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px 70px;
+.profile-card {
+    background: var(--profile-card-bg-color);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: background 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
-    margin: 30px 20px ;
-}
-
-body.light-mode .container {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-body.dark-mode .container {
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-.profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-body.light-mode .profile-pic:hover {
-    transform: scale(1.1);
-    border-color: #6d74e1;
-}
-
-body.dark-mode .profile-pic:hover {
-    transform: scale(1.1);
-    border-color: #b0a9fa;
-}
-
-.name {
-    margin: 20px 0;
-    font-size: 32px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.bio {
-    font-size: 20px;
-    margin-bottom: 30px;
-    transition: color 0.3s ease;
-}
-
-.links .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-    margin: 15px 0;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    position: relative;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra leve no fundo do container */
+    max-width: 400px;
+    width: 100%;
     overflow: hidden;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.light-mode .links .link {
-    background: rgba(0, 0, 0, 0.1);
-    color: #140f07;
-}
-
-body.dark-mode .links .link {
-    background: rgba(255, 255, 255, 0.1);
-    color: #b0a9fa;
-}
-
-.links .link i {
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.links .link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    transition: height 0.3s ease;
-}
-
-.links .link:hover::before {
-    height: 100%;
-}
-
-.links .link:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: transform 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    transform: rotate(20deg);
-}
-
-body.light-mode .dark-mode-toggle {
-    color: #140f07;
-}
-
-body.dark-mode .dark-mode-toggle {
-    color: #b0a9fa;
-}
-
-.dark-mode .name,
-.dark-mode .bio {
-    color: #3b4b8b;
-}
-
-.footer {
     text-align: center;
-    padding: 10px 0;
-    background: rgba(0, 0, 0, 0.2);
-    color: #fff;
-    font-size: 14px;
-    border-radius: 5px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: slideIn 0.5s ease-out;
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
-        height: 80%;
+/* Outros estilos do profile-card */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Color Palettes */
-.light-mode .color1 { color: #140f07; }
-.light-mode .color2 { color: #162242; }
-.light-mode .color3 { color: #3b4b8b; }
-.light-mode .color4 { color: #6d74e1; }
-.light-mode .color5 { color: #b0a9fa; }
+/* Estilos adicionais */
 
-.dark-mode .color1 { color: #140f07; }
-.dark-mode .color2 { color: #162242; }
-.dark-mode .color3 { color: #3b4b8b; }
-.dark-mode .color4 { color: #6d74e1; }
-.dark-mode .color5 { color: #b0a9fa; }
+.profile-header {
+    padding: 20px;
+    background: var(--profile-header-bg-color);
+    color: var(--profile-header-color);
+    position: relative;
+    background-image: var(--profile-header-bg);
+}
+
+#theme-toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: var(--theme-toggle-button-bg-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--theme-toggle-button-bg-border-color);
+}
+
+#theme-toggle-button:hover {
+    background: var(--theme-toggle-hover-bg-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#theme-toggle-button .fa-sun {
+    font-size: 20px;
+    color: var(--theme-toggle-button-sun-color);
+    transition: opacity 0.3s ease;
+}
+
+#theme-toggle-button .fa-moon {
+    font-size: 20px;
+    color: var(--theme-toggle-button-moon-color);
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+#theme-toggle-button.active .fa-sun {
+    opacity: 0;
+    transform: rotate(45deg);
+}
+
+#theme-toggle-button.active .fa-moon {
+    display: block;
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--profile-img-bg-color);
+}
+
+.profile-header h1 {
+    margin: 10px 0 5px;
+    font-size: 24px;
+}
+
+.profile-header p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--social-icons-color);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--social-icons-hover-color);
+    transform: scale(1.1);
+}
+
+.profile-content {
+    padding: 20px;
+    background: var(--profile-content-bg-color);
+    background-image: var(--profile-content-bg-img-color);
+    transition: background 0.3s ease;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(tabs-border-color);
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--tab-border-color);
+}
+
+.tab:hover {
+    background: var(--tab-hover-bg-color);
+    color: var(--tab-hover-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 0 18px;
+    animation: fadeIn 1s ease;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.tab-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab-content li {
+    font-size: 16px;
+    color: var(--tab-content-li-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tab-content li i {
+    margin-right: 10px;
+    /* Espaço entre ícone e texto */
+    color: var(--tab-content-li-icon-color);
+    /* Cor dos ícones */
+    font-size: 20px;
+    /* Tamanho dos ícones */
+}
+
+.tab-content li i:hover {
+    color: var(--tab-content-li-icon-hover-color);
+    /* Cor dos ícones ao passar o mouse */
+}
+
+
+.tab-content i {
+    color: var(--tab-content-icon-color);
+    font-size: 20px;
+    margin-right: 8px;
+    /* Ajuste conforme necessário */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content i:hover {
+    color: var(--tab-content-icon-hover-color);
+    transform: scale(1.1);
+}
+
+.skills-container {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Três colunas */
+    gap: 20px;
+    /* Espaçamento entre os itens */
+    justify-content: center;
+    text-align: center;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: var(--skill-color);
+}
+
+.skill i {
+    font-size: 24px;
+    /* Tamanho dos ícones */
+    margin-bottom: 10px;
+    /* Espaço entre ícone e texto */
+    color: var(--skill-icon-color);
+    /* Cor dos ícones */
+}
+
+.skill span {
+    margin-top: 5px;
+    /* Espaço entre ícone e texto */
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Garantir que apenas dois itens fiquem na segunda linha */
+.tab-content:nth-of-type(2) .skills-container {
+    grid-template-rows: repeat(2, auto);
+    /* Duas linhas */
+    grid-template-columns: repeat(3, 1fr);
+    /* Três colunas */
+}
+
+.tab-content:nth-of-type(2) .skills-container .skill:nth-child(n+4) {
+    grid-column: span 1;
+    /* Manter a largura dos itens */
+}
+
+.tab-content.active {
+    display: block;
+    color: var(--tab-content-active-color);
+}
+
+.tab-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-content form label {
+    margin: 10px 0 5px;
+}
+
+.tab-content form input,
+.tab-content form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 1s ease;
+}
+
+.tab-content form input:focus,
+.tab-content form textarea:focus {
+    border-color: var(--tab-content-input-focus-border-color);
+}
+
+.tab-content form button {
+    padding: 10px;
+    background: var(--tab-content-button-bg-color);
+    color: var(--tab-content-button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tab-content form button:hover {
+    background: var(--tab-content-button-hover-bg-color);
+}
+
+/* Layout
+===================================================== */
+
+/* Container */
+.contato {
+    padding: 0;
+    text-align: center;
+}
+
+/* Titulo */
+.contato h2 {
+    margin: 0;
+    color: var(--heading-contact-text-title-color);
+    font-size: 22px;
+}
+
+/* Paragrafo */
+.contato p {
+    margin: 5px auto 15px;
+    color: var(--contact-text-color);
+}
+
+/* Informações de Contato
+  ===================================================== */
+
+/* Container */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Item de Contato */
+.contact-item {
+    display: flex;
+    gap: 5px;
+    border: 1px solid var(--contact-item-border-color);
+    border-radius: 5px;
+    background: var(--contact-item-background-card-color);
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+/* Ícone do Item de Contato */
+.contact-item i {
+    font-size: 20px;
+    color: var(--contact-item-icon-color);
+    flex-shrink: 0;
+    /* Impede o ícone de encolher */
+    margin: 10px 10px;
+}
+
+/* Detalhes de Contato
+  ===================================================== */
+
+/* Container */
+.contact-details {
+    margin: 5px 5px;
+    text-align: justify;
+}
+
+/* Titulo */
+.contact-details h3 {
+    margin: 0;
+    color: var(--contact-details-heading-color);
+
+    font-size: 16px;
+}
+
+/* Paragrafo */
+.contact-details p {
+    margin: 5px 0 0;
+    color: var(--contact-details-text-color);
+    font-size: 16px;
+}
+
+/* Link */
+.contact-details a {
+    color: var(--contact-details-link-color);
+    text-decoration: none;
+}
+
+/* Link Hover */
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.profile-footer {
+    padding: 10px;
+    background: var(--profile-footer-bg-color);
+    font-size: 12px;
+}
+
+.profile-footer p {
+    margin: 0;
+    color: var(--profile-footer-text-color);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Alterar para duas colunas em telas menores */
+    }
+
+    .skill i {
+        font-size: 30px;
+        /* Tamanho dos ícones em telas menores */
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-item {
+        width: 100%;
+    }
+}
+
+
+
+:root {
+    /* Paleta de Cores - Modo Claro */
+    --bg-color-start: #d7d7ea; /* Cor de fundo inicial */
+    --bg-color-end: #c1c2e2; /* Cor de fundo final */
+    --profile-card-bg-color: #ffffff; /* Cor de fundo do cartão de perfil */
+    --profile-header-bg-color: #a5add5; /* Cor de fundo do cabeçalho do perfil */
+    --profile-header-color: #20264b; /* Cor do texto do cabeçalho do perfil */
+    --profile-img-bg-color: #d7d7ea; /* Cor de fundo da imagem do perfil */
+    --social-icons-color: #20264b; /* Cor dos ícones sociais */
+    --social-icons-hover-color: #f0f0f0; /* Cor dos ícones sociais ao passar o mouse */
+    --profile-content-bg-color: #f0f0f0; /* Cor de fundo do conteúdo do perfil */
+    --profile-content-bg-img-color: linear-gradient(to right, #a5add5, #d7d7ea); /* Gradiente de fundo do conteúdo do perfil */
+    --tabs-border-color: #909afb; /* Cor da borda das abas */
+    --tab-border-color: #20264b; /* Cor da borda das abas ao passar o mouse */
+    --tab-hover-bg-color: #a5add5; /* Cor de fundo das abas ao passar o mouse */
+    --tab-hover-color: #140f07; /* Cor do texto das abas ao passar o mouse */
+    --tab-content-li-color: #20264b; /* Cor do texto dos itens de lista */
+    --tab-content-li-icon-color: #515caa; /* Cor dos ícones dos itens de lista */
+    --tab-content-li-icon-hover-color: #20264b; /* Cor dos ícones dos itens de lista ao passar o mouse */
+    --tab-content-icon-color: #607cb6; /* Cor dos ícones do conteúdo da aba */
+    --tab-content-icon-hover-color: #515caa; /* Cor dos ícones do conteúdo da aba ao passar o mouse */
+    --tab-content-active-color: #20264b; /* Cor do item ativo no conteúdo da aba */
+    --tab-content-input-focus-border-color: #515caa; /* Cor da borda do campo de entrada ao focar */
+    --tab-content-button-bg-color: #607cb6; /* Cor de fundo do botão do conteúdo da aba */
+    --tab-content-button-color: #ffffff; /* Cor do texto do botão do conteúdo da aba */
+    --tab-content-button-hover-bg-color: #515caa; /* Cor de fundo do botão ao passar o mouse */
+    --theme-toggle-button-bg-color: #d7d7ea; /* Cor de fundo do botão de alternância de tema */
+    --theme-toggle-button-bg-border-color: #515caa; /* Cor da borda do botão de alternância de tema */
+    --theme-toggle-hover-bg-color: #607cb6; /* Cor de fundo do botão de alternância de tema ao passar o mouse */
+    --theme-toggle-button-sun-color: #20264b; /* Cor do ícone de sol no botão de alternância de tema */
+    --theme-toggle-button-moon-color: #ffffff; /* Cor do ícone de lua no botão de alternância de tema */
+    --skill-color: #20264b; /* Cor do texto das habilidades */
+    --skill-icon-color: #515caa; /* Cor dos ícones das habilidades */
+    --heading-contact-text-title-color: #20264b; /* Cor do título da seção de contato */
+    --contact-text-color: #515caa; /* Cor do texto de contato */
+    --contact-item-border-color: #a5add5; /* Cor da borda dos itens de contato */
+    --contact-item-background-card-color: #f0f0f0; /* Cor de fundo dos cartões de contato */
+    --contact-item-icon-color: #20264b; /* Cor dos ícones dos itens de contato */
+    --contact-details-heading-color: #140f07; /* Cor do título dos detalhes de contato */
+    --contact-details-text-color: #20264b; /* Cor do texto dos detalhes de contato */
+    --contact-details-link-color: #515caa; /* Cor dos links nos detalhes de contato */
+    --profile-footer-bg-color: #c1c2e2; /* Cor de fundo do rodapé do perfil */
+    --profile-footer-text-color: #20264b; /* Cor do texto do rodapé do perfil */
+}
+
+body.dark-mode {
+    /* Paleta de Cores - Modo Escuro */
+    --bg-color-start: #20264b; /* Cor de fundo inicial */
+    --bg-color-end: #140f07; /* Cor de fundo final */
+    --profile-card-bg-color: #20264b; /* Cor de fundo do cartão de perfil */
+    --profile-header-bg-color: #515caa; /* Cor de fundo do cabeçalho do perfil */
+    --profile-header-color: #d7d7ea; /* Cor do texto do cabeçalho do perfil */
+    --profile-img-bg-color: #909afb; /* Cor de fundo da imagem do perfil */
+    --social-icons-color: #d7d7ea; /* Cor dos ícones sociais */
+    --social-icons-hover-color: #a5add5; /* Cor dos ícones sociais ao passar o mouse */
+    --profile-content-bg-color: #515caa; /* Cor de fundo do conteúdo do perfil */
+    --profile-content-bg-img-color: linear-gradient(to right, #140f07, #20264b); /* Gradiente de fundo do conteúdo do perfil */
+    --tabs-border-color: #c1c2e2; /* Cor da borda das abas */
+    --tab-border-color: #a5add5; /* Cor da borda das abas ao passar o mouse */
+    --tab-hover-bg-color: #515caa; /* Cor de fundo das abas ao passar o mouse */
+    --tab-hover-color: #d7d7ea; /* Cor do texto das abas ao passar o mouse */
+    --tab-content-li-color: #d7d7ea; /* Cor do texto dos itens de lista */
+    --tab-content-li-icon-color: #a5add5; /* Cor dos ícones dos itens de lista */
+    --tab-content-li-icon-hover-color: #c1c2e2; /* Cor dos ícones dos itens de lista ao passar o mouse */
+    --tab-content-icon-color: #d7d7ea; /* Cor dos ícones do conteúdo da aba */
+    --tab-content-icon-hover-color: #a5add5; /* Cor dos ícones do conteúdo da aba ao passar o mouse */
+    --tab-content-active-color: #d7d7ea; /* Cor do item ativo no conteúdo da aba */
+    --tab-content-input-focus-border-color: #909afb; /* Cor da borda do campo de entrada ao focar */
+    --tab-content-button-bg-color: #607cb6; /* Cor de fundo do botão do conteúdo da aba */
+    --tab-content-button-color: #d7d7ea; /* Cor do texto do botão do conteúdo da aba */
+    --tab-content-button-hover-bg-color: #515caa; /* Cor de fundo do botão ao passar o mouse */
+    --theme-toggle-button-bg-color: #20264b; /* Cor de fundo do botão de alternância de tema */
+    --theme-toggle-button-bg-border-color: #140f07; /* Cor da borda do botão de alternância de tema */
+    --theme-toggle-hover-bg-color: #515caa; /* Cor de fundo do botão de alternância de tema ao passar o mouse */
+    --theme-toggle-button-sun-color: #d7d7ea; /* Cor do ícone de sol no botão de alternância de tema */
+    --theme-toggle-button-moon-color: #a5add5; /* Cor do ícone de lua no botão de alternância de tema */
+    --skill-color: #d7d7ea; /* Cor do texto das habilidades */
+    --skill-icon-color: #a5add5; /* Cor dos ícones das habilidades */
+    --heading-contact-text-title-color: #d7d7ea; /* Cor do título da seção de contato */
+    --contact-text-color: #c1c2e2; /* Cor do texto de contato */
+    --contact-item-border-color: #515caa; /* Cor da borda dos itens de contato */
+    --contact-item-background-card-color: #20264b; /* Cor de fundo dos cartões de contato */
+    --contact-item-icon-color: #d7d7ea; /* Cor dos ícones dos itens de contato */
+    --contact-details-heading-color: #c1c2e2; /* Cor do título dos detalhes de contato */
+    --contact-details-text-color: #a5add5; /* Cor do texto dos detalhes de contato */
+    --contact-details-link-color: #909afb; /* Cor dos links nos detalhes de contato */
+    --profile-footer-bg-color: #20264b; /* Cor de fundo do rodapé do perfil */
+    --profile-footer-text-color: #d7d7ea; /* Cor do texto do rodapé do perfil */
+}
+
+

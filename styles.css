@@ -14,7 +14,7 @@ body {
     border-radius: 15px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
     /* Sombra leve no fundo do container */
-    max-width: 400px;
+    max-width: 330px;
     width: 100%;
     overflow: hidden;
     text-align: center;

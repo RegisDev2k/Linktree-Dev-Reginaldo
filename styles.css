@@ -430,7 +430,11 @@ body {
     }
 }
 
-
+@media (max-width: 430px) {
+    .profile-card {
+        width: 75%;
+    }
+}
 
 :root {
     /* Paleta de Cores - Modo Claro */

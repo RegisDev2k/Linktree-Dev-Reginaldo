@@ -143,7 +143,6 @@ body {
 .tabs {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 10px;
     border-bottom: 2px solid var(tabs-border-color);
 }
 
@@ -434,6 +433,29 @@ body {
     .profile-card {
         width: 75%;
     }
+
+    .tab {
+        font-size: 14px;
+    }
+
+    .profile-content {
+        padding: 5px;
+    }
+
+    .profile-footer {
+        font-size: 8px;
+    }
+
+    .skill span {
+        font-size: 12px;
+    }
+
+    .skills-container{
+        gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 5px;
+    }
+    
 }
 
 :root {
